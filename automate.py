@@ -47,8 +47,9 @@ word_cloud_dict = dict(zip(keys, values))
 word_cloud_dict = {k: v for k, v in sorted(word_cloud_dict.items(), key=lambda item: item[1], reverse = True)}
 
 # choose the top N keys to include in the histogram
-word_cloud = dict(list(word_cloud_dict.items())[0:10])
-word_cloud = dict( (key, value) for (key, value) in word_cloud_dict.items() if value > 1)
+word_cloud = dict(list(word_cloud_dict.items())[0:30])
+#word_cloud = dict( (key, value) for (key, value) in word_cloud_dict.items() if value > 1)
+print(word_cloud)
 
 # create the histogram
 import matplotlib.pyplot as plt
