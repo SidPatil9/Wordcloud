@@ -8,10 +8,9 @@ def get_text(filename):
     for i in doc.paragraphs:
         lines.append(i.text)
     output = '\n'.join(lines)
-    output = output.replace(",", "")
-    output = output.replace(".", "")
+    output = output.replace(",", "").replace(".", "").replace(")", "").replace("(", "").split()
     return output
-desc = get_text('job_desc.docx').split()
+desc = get_text('document.docx')
 
 # ignore obviously non-significant words, and convert the rest to lower case
 words = []
@@ -25,7 +24,7 @@ for i in desc:
 uniques = list(set(words))
 
 # create a list of words to exclude from the analysis
-ex_list = ['your', 'yourself', 'from', 'part', 'such', 'overall', 'this', 'will', 'sure', 'just', 'both', 'gender', 'also', 'while', 'your', "you're", 'google', 'that', 'more', 'kale', 'have', 'with', 'at', 'on', 'the', 'within', 'and', 'you', 'atleast', 'like', 'mentioned', 'below', 'current', 'location', 'role']
+ex_list = ['which', 'it', 'usa', 'india', 'helped', 'your', 'yourself', 'from', 'part', 'such', 'overall', 'this', 'will', 'sure', 'just', 'both', 'gender', 'also', 'while', 'your', "you're", 'google', 'that', 'more', 'kale', 'have', 'with', 'at', 'on', 'the', 'within', 'and', 'you', 'atleast', 'like', 'mentioned', 'below', 'current', 'location', 'role']
 
 # create a blank list to populate later with only significant words
 words_uniques = []
@@ -47,9 +46,8 @@ word_cloud_dict = dict(zip(keys, values))
 word_cloud_dict = {k: v for k, v in sorted(word_cloud_dict.items(), key=lambda item: item[1], reverse = True)}
 
 # choose the top N keys to include in the histogram
-word_cloud = dict(list(word_cloud_dict.items())[0:30])
+word_cloud = dict(list(word_cloud_dict.items())[0:20])
 #word_cloud = dict( (key, value) for (key, value) in word_cloud_dict.items() if value > 1)
-print(word_cloud)
 
 # create the histogram
 import matplotlib.pyplot as plt
