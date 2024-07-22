@@ -1,1 +1,7 @@
-Goal of this exercise is to draw insights from raw data.
+This code helps you to analyze a body of text but providing a count of top words that appear in it.
+
+This information can be used to highlight specific experiences within your resume when applying for a specfici job.
+
+e.g. paste the job description in document.docx (file included), run the code to see the top N words that appear in the description.
+![image](https://github.com/user-attachments/assets/f5fa2c1f-2872-4689-a67e-d932c104160a)
+
