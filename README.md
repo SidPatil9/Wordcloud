@@ -4,3 +4,5 @@ e.g. paste the job description in document.docx (file included), run the code to
 ![image](https://github.com/user-attachments/assets/f5fa2c1f-2872-4689-a67e-d932c104160a)
 
 This information can be used to highlight specific experiences within your resume when applying for a job.
+
+You can exclude specific words that you wish to not see in the chart by adding those to 'ex_list'.
